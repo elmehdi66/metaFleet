@@ -1,7 +1,6 @@
 import Sidebar from "@/Components/Sidebar";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import { Head } from "@inertiajs/react";
-import Roads from "./itineraires/Roads";
+import { Head , usePage} from "@inertiajs/react";
 
 export default function Dashboard({ auth }) {
     return (
@@ -12,7 +11,7 @@ export default function Dashboard({ auth }) {
                 <Sidebar />
 
                 <div className="col-md-12 offset-md-3">
-                    <Roads/>
+
                 </div>
             </div>
         </AuthenticatedLayout>

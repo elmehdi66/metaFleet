@@ -41,6 +41,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/meta-dash-fleet', function () {
         return Inertia::render('Dashboard');
+
     })->name('dashboard');
 
     Route::get('/roads',[PagesController::class,'index'])->name('itineraires');

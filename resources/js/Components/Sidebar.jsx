@@ -1,5 +1,6 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { InertiaLink } from '@inertiajs/inertia-react';
 
 function Sidebar() {
     return (
@@ -36,7 +37,7 @@ function Sidebar() {
                                 </a>
                                 <ul>
                                     <li>
-                                        <a href="/roads">Consultes tous les itinéraires</a>
+                                        <InertiaLink href={route('itineraires')}>Consultes tous les itinéraires</InertiaLink>
                                     </li>
 
                                 </ul>
