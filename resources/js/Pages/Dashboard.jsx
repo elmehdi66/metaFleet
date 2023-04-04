@@ -1,17 +1,17 @@
+import Header from "@/Components/Header";
 import Sidebar from "@/Components/Sidebar";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import { Head , usePage} from "@inertiajs/react";
+import { Head, usePage } from "@inertiajs/react";
 
-export default function Dashboard({children }) {
-    const {auth} = usePage().props
+export default function Dashboard({ children }) {
+    const { auth } = usePage().props
     return (
         <>
-            <div className="bg-white">
-            Navbar {auth.user.name}
-            </div>
-             <Head title="Dashboard" />
+
+            <Head title="Dashboard" />
 
             <div className="row">
+                <Header />
                 <Sidebar />
 
                 <div className="col-md-12 offset-md-3">
