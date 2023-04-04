@@ -2,8 +2,8 @@ import Sidebar from "@/Components/Sidebar";
 import React from "react";
 import Dashboard from "../Dashboard";
 
-function Roads({ auth }) {
-
+function Roads({ auth, itineraires }) {
+    console.log(itineraires);
     return (
         <Dashboard>
             <h1>Hello</h1>

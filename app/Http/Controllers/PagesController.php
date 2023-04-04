@@ -11,6 +11,8 @@ class PagesController extends Controller
 
     public function index()
     {
-        return Inertia::render('Itineraires/Roads');
+        return Inertia::render('Itineraires/Roads', [
+            'itineraires' => Itineraire::all()
+        ]);
     }
 }
