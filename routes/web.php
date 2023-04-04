@@ -18,7 +18,7 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Login', [
+    return Inertia::render('Auth/Login', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
@@ -41,7 +41,6 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/meta-dash-fleet', function () {
         return Inertia::render('Dashboard');
-
     })->name('dashboard');
 
     Route::get('/roads',[PagesController::class,'index'])->name('itineraires');

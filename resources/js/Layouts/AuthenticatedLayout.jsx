@@ -19,8 +19,8 @@ export default function Authenticated({ user, header, children }) {
 
 
         <div className="min-h-screen">
-            <nav className="bg-transparent border-b border-gray-100">
-                <div className=" mx-auto px-4 sm:px-6 lg:px-8">
+            <nav className="bg-transparent border-b border-gray-100 shadow">
+                <div className=" mx-auto px-4 sm:px-6 lg:px-3">
                     <div className="flex justify-between h-16">
                         <div className="flex">
                             <div className="shrink-0 flex items-center">

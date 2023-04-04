@@ -1,12 +1,13 @@
 import Sidebar from "@/Components/Sidebar";
 import React from "react";
+import Dashboard from "../Dashboard";
 
-function Roads(props) {
+function Roads({auth}) {
 
     return (
-        <div>
-            <div className="col-md-9">hello</div>
-        </div>
+        <Dashboard>
+            
+        </Dashboard>
     );
 }
 
