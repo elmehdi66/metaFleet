@@ -13,7 +13,6 @@ export default function Dashboard({ children }) {
             <div className="row">
                 <Header />
                 <Sidebar />
-
                 <div className="col-md-12 offset-md-3">
                     <div className="row">
                         <div className="col-md-9">

@@ -10,7 +10,7 @@ function Sidebar() {
                     <ul>
                         <li>
                             <a className="active"
-                                href="index.html">
+                                href={route('dashboard')}>
                                 <span className="nav-link-icon">
                                     <i className="bi bi-bar-chart"></i>
                                 </span>
