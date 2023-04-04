@@ -9,13 +9,13 @@ function Sidebar() {
                 <div className="menu-body mt-5 pt-5" >
                     <ul>
                         <li>
-                            <a className="active"
+                            <Link className="active"
                                 href={route('dashboard')}>
                                 <span className="nav-link-icon">
                                     <i className="bi bi-bar-chart"></i>
                                 </span>
                                 <span>Dashboard</span>
-                            </a>
+                            </Link>
                         </li>
                         <li className="menu-divider">Gestion</li>
                         <li>
