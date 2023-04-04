@@ -106,11 +106,7 @@ function Header() {
                                 className="text-primary">$1.442,78</strong></h6>
                         </div>
                     </li>
-                    <li className="nav-item ms-3">
-                        <button className="btn btn-primary btn-icon">
-                            <i className="bi bi-plus-circle"></i> Add Product
-                        </button>
-                    </li>
+
                 </ul>
             </div>
 
