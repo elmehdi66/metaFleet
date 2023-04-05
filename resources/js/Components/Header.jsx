@@ -3,122 +3,348 @@ import React from 'react'
 function Header() {
     return (
 
-        <div className="header">
-            <div className="menu-toggle-btn">
-                <a href="#">
-                    <i className="bi bi-list"></i>
+        <div className="container fixed-top">
+            <div className="header">
+                <div className="menu-toggle-btn">
+                    <a href="#">
+                        <i className="bi bi-list"></i>
+                    </a>
+                </div>
+                <a href="index.html" className="logo">
+                    <img width="100" src="https://vetra.laborasyon.com/assets/images/logo.svg" alt="logo" />
                 </a>
-            </div>
-
-            <a href="index.html" className="logo">
-                <img width="100" src="https://vetra.laborasyon.com/assets/images/logo.svg" alt="logo"/>
-            </a>
-
-            <div className="page-title">Overview</div>
-            <form className="search-form">
-                <div className="input-group">
-                    <button className="btn btn-outline-light" type="button" id="button-addon1">
-                        <i className="bi bi-search"></i>
-                    </button>
-                    <input type="text" className="form-control" placeholder="Search..."
-                        aria-label="Example text with button addon" aria-describedby="button-addon1"/>
+                <div className="page-title">Overview</div>
+                <form className="search-form">
+                    <div className="input-group">
+                        <button className="btn btn-outline-light" type="button" id="button-addon1">
+                            <i className="bi bi-search"></i>
+                        </button>
+                        <input type="text" className="form-control" placeholder="Search..."
+                            aria-label="Example text with button addon" aria-describedby="button-addon1" />
                         <a href="#" className="btn btn-outline-light close-header-search-bar" >
                             <i className="bi bi-x"></i>
                         </a>
+                    </div>
+                </form>
+                <div className="header-bar ms-auto">
+                    <ul className="navbar-nav justify-content-end">
+                        <li className="nav-item">
+                            <a href="#" className="nav-link nav-link-notify" data-count="2" data-sidebar-target="#notifications">
+                                <i className="bi bi-bell icon-lg"></i>
+                            </a>
+                        </li>
+
+                    </ul>
                 </div>
-            </form>
-            <div className="header-bar ms-auto">
-                <ul className="navbar-nav justify-content-end">
-                    <li className="nav-item">
-                        <a href="#" className="nav-link nav-link-notify" data-count="2" data-sidebar-target="#notifications">
-                            <i className="bi bi-bell icon-lg"></i>
-                        </a>
-                    </li>
-                    <li className="nav-item dropdown">
-                        <a href="#" className="nav-link nav-link-notify" data-count="3" data-bs-toggle="dropdown">
-                            <i className="bi bi-cart2 icon-lg"></i>
-                        </a>
-                        <div className="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0">
-                            <h6 className="m-0 px-4 py-3 border-bottom">Shopping Cart</h6>
-                            <div className="dropdown-menu-body">
-                                <div className="list-group list-group-flush">
-                                    <div className="list-group-item d-flex align-items-center">
-                                        <a href="#" className="text-danger me-3" title="Remove">
-                                            <i className="bi bi-trash"></i>
+                <div className="header-mobile-buttons">
+                    <a href="#" className="search-bar-btn">
+                        <i className="bi bi-search"></i>
+                    </a>
+                    <a href="#" className="actions-btn">
+                        <i className="bi bi-three-dots"></i>
+                    </a>
+                </div>
+            </div>
+            <div className="sidebar show bg-white" id="notifications">
+                <div className="sidebar-header d-block align-items-end">
+                    <div className="align-items-center d-flex justify-content-between py-4">
+                        Notifications
+                        <button data-sidebar-close="">
+                            <i className="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                    <ul className="nav nav-pills">
+                        <li className="nav-item">
+                            <a className="nav-link nav-link-notify active" data-bs-toggle="tab" href="#activities">Activities</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" data-bs-toggle="tab" href="#notes">Notes</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" data-bs-toggle="tab" href="#alerts">Alerts</a>
+                        </li>
+                    </ul>
+                </div>
+                <div className="sidebar-content"  >
+                    <div className="tab-content">
+                        <div className="tab-pane active" id="activities">
+                            <div className="tab-pane-body">
+                                <ul className="list-group list-group-flush">
+                                    <li className="px-0 list-group-item">
+                                        <a href="#" className="d-flex">
+                                            <div className="flex-shrink-0">
+                                                <figure className="avatar avatar-info me-3">
+                                                    <span className="avatar-text rounded-circle">
+                                                        <i className="bi bi-person"></i>
+                                                    </span>
+                                                </figure>
+                                            </div>
+                                            <div className="flex-grow-1">
+                                                <p className="mb-0 fw-bold d-flex justify-content-between">
+                                                    You joined a group
+                                                </p>
+                                                <span className="text-muted small">
+                                                    <i className="bi bi-clock me-1"></i> Today
+                                                </span>
+                                            </div>
                                         </a>
-                                        <a href="#" className="me-3 flex-shrink-0 ">
-                                            <img src="../../assets/images/products/3.jpg" className="rounded" width="60"
-                                                alt="..."/>
+                                    </li>
+                                    <li className="px-0 list-group-item">
+                                        <a href="#" className="d-flex">
+                                            <div className="flex-shrink-0">
+                                                <figure className="avatar avatar-warning me-3">
+                                                    <span className="avatar-text rounded-circle">
+                                                        <i className="bi bi-hdd"></i>
+                                                    </span>
+                                                </figure>
+                                            </div>
+                                            <div className="flex-grow-1">
+                                                <p className="mb-0 fw-bold d-flex justify-content-between">
+                                                    Storage is running low!
+                                                </p>
+                                                <span className="text-muted small">
+                                                    <i className="bi bi-clock me-1"></i> Today
+                                                </span>
+                                            </div>
                                         </a>
-                                        <div>
-                                            <h6>Digital clock</h6>
-                                            <div>1 x $1.190,90</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="list-group list-group-flush">
-                                    <div className="list-group-item d-flex align-items-center">
-                                        <a href="#" className="text-danger me-3" title="Remove">
-                                            <i className="bi bi-trash"></i>
+                                    </li>
+                                    <li className="px-0 list-group-item">
+                                        <a href="#" className="d-flex">
+                                            <div className="flex-shrink-0">
+                                                <figure className="avatar avatar-secondary me-3">
+                                                    <span className="avatar-text rounded-circle">
+                                                        <i className="bi bi-file-text"></i>
+                                                    </span>
+                                                </figure>
+                                            </div>
+                                            <div className="flex-grow-1">
+                                                <p className="mb-0 d-flex justify-content-between">
+                                                    1 person sent a file
+                                                </p>
+                                                <span className="text-muted small">
+                                                    <i className="bi bi-clock me-1"></i> Yesterday
+                                                </span>
+                                            </div>
                                         </a>
-                                        <a href="#" className="me-3 flex-shrink-0 ">
-                                            <img src="../../assets/images/products/4.jpg" className="rounded" width="60"
-                                                alt="..."/>
+                                    </li>
+                                    <li className="px-0 list-group-item">
+                                        <a href="#" className="d-flex">
+                                            <div className="flex-shrink-0">
+                                                <figure className="avatar avatar-success me-3">
+                                                    <span className="avatar-text rounded-circle">
+                                                        <i className="bi bi-download"></i>
+                                                    </span>
+                                                </figure>
+                                            </div>
+                                            <div className="flex-grow-1">
+                                                <p className="mb-0 d-flex justify-content-between">
+                                                    Reports ready to download
+                                                </p>
+                                                <span className="text-muted small">
+                                                    <i className="bi bi-clock me-1"></i> Yesterday
+                                                </span>
+                                            </div>
                                         </a>
-                                        <div>
-                                            <h6>Toy Car</h6>
-                                            <div>1 x $139.58</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="list-group list-group-flush">
-                                    <div className="list-group-item d-flex align-items-center">
-                                        <a href="#" className="text-danger me-3" title="Remove">
-                                            <i className="bi bi-trash"></i>
+                                    </li>
+                                    <li className="px-0 list-group-item">
+                                        <a href="#" className="d-flex">
+                                            <div className="flex-shrink-0">
+                                                <figure className="avatar avatar-info me-3">
+                                                    <span className="avatar-text rounded-circle">
+                                                        <i className="bi bi-lock"></i>
+                                                    </span>
+                                                </figure>
+                                            </div>
+                                            <div className="flex-grow-1">
+                                                <p className="mb-0 d-flex justify-content-between">
+                                                    2 steps verification
+                                                </p>
+                                                <span className="text-muted small">
+                                                    <i className="bi bi-clock me-1"></i> 20 min ago
+                                                </span>
+                                            </div>
                                         </a>
-                                        <a href="#" className="me-3 flex-shrink-0 ">
-                                            <img src="../../assets/images/products/5.jpg" className="rounded" width="60"
-                                                alt="..."/>
-                                        </a>
-                                        <div>
-                                            <h6>Sunglasses</h6>
-                                            <div>2 x $50,90</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="list-group list-group-flush">
-                                    <div className="list-group-item d-flex align-items-center">
-                                        <a href="#" className="text-danger me-3" title="Remove">
-                                            <i className="bi bi-trash"></i>
-                                        </a>
-                                        <a href="#" className="me-3 flex-shrink-0 ">
-                                            <img src="../../assets/images/products/6.jpg" className="rounded" width="60"
-                                                alt="..."/>
-                                        </a>
-                                        <div>
-                                            <h6>Cake</h6>
-                                            <div>1 x $10,50</div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    </li>
+                                </ul>
                             </div>
-                            <h6 className="m-0 px-4 py-3 border-top small">Sub Total : <strong
-                                className="text-primary">$1.442,78</strong></h6>
+                            <div className="tab-pane-footer">
+                                <a href="#" className="btn btn-success">
+                                    <i className="bi bi-check2 me-2"></i> Make All Read
+                                </a>
+                                <a href="#" className="btn btn-danger ms-2">
+                                    <i className="bi bi-trash me-2"></i> Delete all
+                                </a>
+                            </div>
                         </div>
-                    </li>
+                        <div className="tab-pane" id="notes">
+                            <div className="tab-pane-body">
+                                <ul className="list-group list-group-flush">
+                                    <li className="px-0 list-group-item">
+                                        <p className="mb-0 fw-bold text-success d-flex justify-content-between">
+                                            This month's report will be prepared.
+                                        </p>
+                                        <span className="text-muted small">
+                                            <i className="bi bi-clock me-1"></i> Today
+                                        </span>
+                                        <div className="mt-2">
+                                            <a href="#">Edit</a>
+                                            <a href="#" className="text-danger ms-2">Delete</a>
+                                        </div>
+                                    </li>
+                                    <li className="px-0 list-group-item">
+                                        <p className="mb-0 fw-bold text-success d-flex justify-content-between">
+                                            An email will be sent to the customer.
+                                        </p>
+                                        <span className="text-muted small">
+                                            <i className="bi bi-clock me-1"></i> Today
+                                        </span>
+                                        <div className="mt-2">
+                                            <a href="#">Edit</a>
+                                            <a href="#" className="text-danger ms-2">Delete</a>
+                                        </div>
+                                    </li>
+                                    <li className="px-0 list-group-item">
+                                        <p className="mb-0 d-flex justify-content-between">
+                                            The meeting will be held.
+                                        </p>
+                                        <span className="text-muted small">
+                                            <i className="bi bi-clock me-1"></i> Yesterday
+                                        </span>
+                                        <div className="mt-2">
+                                            <a href="#">Edit</a>
+                                            <a href="#" className="text-danger ms-2">Delete</a>
+                                        </div>
+                                    </li>
+                                    <li className="px-0 list-group-item">
+                                        <p className="mb-0 fw-bold text-success d-flex justify-content-between">
+                                            Conversation with users.
+                                        </p>
+                                        <span className="text-muted small">
+                                            <i className="bi bi-clock me-1"></i> Yesterday
+                                        </span>
+                                        <div className="mt-2">
+                                            <a href="#">Edit</a>
+                                            <a href="#" className="text-danger ms-2">Delete</a>
+                                        </div>
+                                    </li>
+                                    <li className="px-0 list-group-item">
+                                        <p className="mb-0 fw-bold text-warning d-flex justify-content-between">
+                                            Payment refund will be made to the customer.
+                                        </p>
+                                        <span className="text-muted small">
+                                            <i className="bi bi-clock me-1"></i> 20 min ago
+                                        </span>
+                                        <div className="mt-2">
+                                            <a href="#">Edit</a>
+                                            <a href="#" className="text-danger ms-2">Delete</a>
+                                        </div>
+                                    </li>
+                                    <li className="px-0 list-group-item">
+                                        <p className="mb-0 d-flex justify-content-between">
+                                            Payment form will be activated.
+                                        </p>
+                                        <span className="text-muted small">
+                                            <i className="bi bi-clock me-1"></i> 20 min ago
+                                        </span>
+                                        <div className="mt-2">
+                                            <a href="#">Edit</a>
+                                            <a href="#" className="text-danger ms-2">Delete</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="tab-pane-footer">
+                                <a href="#" className="btn btn-primary btn-block">
+                                    <i className="bi bi-plus me-2"></i> Add Notes
+                                </a>
+                            </div>
+                        </div>
+                        <div className="tab-pane" id="alerts">
+                            <div className="tab-pane-body">
+                                <ul className="list-group list-group-flush">
+                                    <li className="px-0 list-group-item d-flex">
+                                        <div className="flex-shrink-0">
+                                            <figure className="avatar avatar-warning me-3">
+                                                <span className="avatar-text rounded-circle">
+                                                    <i className="bi bi-lock"></i>
+                                                </span>
+                                            </figure>
+                                        </div>
+                                        <div className="flex-grow-1">
+                                            <p className="mb-0 fw-bold d-flex justify-content-between">
+                                                Signed in with a different device.
+                                            </p>
+                                            <span className="text-muted small">
+                                                <i className="bi bi-clock me-1"></i> Yesterday
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li className="px-0 list-group-item d-flex">
+                                        <div className="flex-shrink-0">
+                                            <figure className="avatar avatar-warning me-3">
+                                                <span className="avatar-text fw-bold rounded-circle">
+                                                    <i className="bi bi-file-text"></i>
+                                                </span>
+                                            </figure>
+                                        </div>
+                                        <div className="flex-grow-1">
+                                            <p className="mb-0 fw-bold d-flex justify-content-between">
+                                                Your billing information is not active.
+                                            </p>
+                                            <span className="text-muted small">
+                                                <i className="bi bi-clock me-1"></i> Yesterday
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li className="px-0 list-group-item d-flex">
+                                        <div className="flex-shrink-0">
+                                            <figure className="avatar avatar-warning me-3">
+                                                <span className="avatar-text rounded-circle">
+                                                    <i className="bi bi-person"></i>
+                                                </span>
+                                            </figure>
+                                        </div>
+                                        <div className="flex-grow-1">
+                                            <p className="mb-0 d-flex justify-content-between">
+                                                Your subscription has expired.
+                                            </p>
+                                            <span className="text-muted small">
+                                                <i className="bi bi-clock me-1"></i> Today
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li className="px-0 list-group-item d-flex">
+                                        <div className="flex-shrink-0">
+                                            <figure className="avatar avatar-warning me-3">
+                                                <span className="avatar-text rounded-circle">
+                                                    <i className="bi bi-hdd"></i>
+                                                </span>
+                                            </figure>
+                                        </div>
+                                        <div className="flex-grow-1">
+                                            <p className="mb-0 d-flex justify-content-between">
+                                                Your storage space is running low
+                                            </p>
+                                            <span className="text-muted small">
+                                                <i className="bi bi-clock me-1"></i> Today
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="tab-pane-footer">
+                                <a href="#" className="btn btn-success">
+                                    <i className="bi bi-check2 me-2"></i> Make All Read
+                                </a>
+                                <a href="#" className="btn btn-danger ms-2">
+                                    <i className="bi bi-trash me-2"></i> Delete all
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                </ul>
             </div>
-
-            <div className="header-mobile-buttons">
-                <a href="#" className="search-bar-btn">
-                    <i className="bi bi-search"></i>
-                </a>
-                <a href="#" className="actions-btn">
-                    <i className="bi bi-three-dots"></i>
-                </a>
-            </div>
-
         </div>
     )
 }

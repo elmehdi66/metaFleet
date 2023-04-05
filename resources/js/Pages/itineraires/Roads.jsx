@@ -1,12 +1,20 @@
 import Sidebar from "@/Components/Sidebar";
 import React from "react";
 import Dashboard from "../Dashboard";
+import Activities from "@/Components/Activities";
 
-function Roads({ auth, itineraires }) {
+function Roads({  itineraires }) {
     console.log(itineraires);
     return (
         <Dashboard>
-            <h1>Hello</h1>
+
+            {itineraires.map((item , key)=>{
+               return <div key={key}>
+                    the date is : {item.depart}
+                </div>
+            } )}
+
+
         </Dashboard>
     );
 }

@@ -11746,6 +11746,9 @@ table.dataTable thead .sorting_desc:before {
     -ms-flex-direction: column;
     flex-direction: column;
 }
+.scroll{
+    overflow-y: scroll !important;
+}
 .menu-header {
 
     -webkit-box-pack: justify;
