@@ -1,21 +1,18 @@
-import Sidebar from "@/Components/Sidebar";
+
 import React from "react";
-import Dashboard from "../Dashboard";
-import Activities from "@/Components/Activities";
+import Layout from "@/Layout";
 
 function Roads({  itineraires }) {
     console.log(itineraires);
     return (
-        <Dashboard>
+        <Layout>
 
             {itineraires.map((item , key)=>{
                return <div key={key}>
                     the date is : {item.depart}
                 </div>
             } )}
-
-
-        </Dashboard>
+        </Layout>
     );
 }
 
