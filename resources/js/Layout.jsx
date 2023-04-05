@@ -15,7 +15,7 @@ export default function Layout({ children }) {
                 <Sidebar />
                 <div className="col-md-12 offset-md-3 ">
                     <div className="row">
-                        <div className="col-md-9 mt-5 pt-5 mx-3 scroll ">
+                        <div className="col-md-9 mt-5 pt-5 mx-1 scroll ">
                             {children}
                         </div>
                     </div>

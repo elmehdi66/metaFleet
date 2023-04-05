@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ asset('assets/libs/dataTable/datatables.min.css') }}" type="text/css">
 
     <title inertia>{{ config('app.name', 'Laravel') }}</title>
 
@@ -24,6 +25,12 @@
     @inertia
 
     <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script src="{{ asset('assets/libs/dataTable/datatables.min.js') }}"></script>
+    <script>
+        $('#datatable-example').DataTable({
+            responsive: true
+        });
+    </script>
     @include('flashy::message')
 </body>
 
