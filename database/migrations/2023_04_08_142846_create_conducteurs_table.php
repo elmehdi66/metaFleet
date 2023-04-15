@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('conducteurs', function (Blueprint $table) {
             $table->id();
+            $table->string('nom')->nullable();
+            $table->string('prenom')->nullable();
+            $table->date('date_naissance')->nullable();
+            $table->bigInteger('telephone')->nullable();
+            $table->string('email')->nullable();
+            $table->string('num_permis')->nullable();
+            $table->string('contrat')->nullable();
             $table->timestamps();
         });
     }

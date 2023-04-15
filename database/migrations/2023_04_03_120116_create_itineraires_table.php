@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('itineraires', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_vehicule');
+            $table->foreignId('id_conducteur');
             $table->foreignId('id_destination');
             $table->dateTime('depart');
             $table->dateTime('arrivee');

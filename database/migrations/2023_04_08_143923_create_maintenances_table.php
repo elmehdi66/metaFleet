@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('maintenances', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_vehicule');
+            $table->date('end_date');
+            $table->string('type_maintenance');
+            $table->bigInteger('prix');
+            $table->bigInteger('kilometrage');
             $table->timestamps();
         });
     }

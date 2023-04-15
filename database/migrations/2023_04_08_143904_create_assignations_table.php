@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('assignations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_vehicule');
+            $table->foreignId('id_conducteur');
             $table->timestamps();
         });
     }
