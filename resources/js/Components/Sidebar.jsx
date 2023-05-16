@@ -1,64 +1,52 @@
-import React from 'react'
+import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from '@inertiajs/react';
+import { Link , usePage} from '@inertiajs/react';
 
 function Sidebar() {
-    return (
-        <>
-            <div className="menu">
-                <div className="menu-body mt-5 pt-5" >
-                    <ul>
-                        <li>
-                            <Link className="active"
-                                href={route('dashboard')}>
-                                <span className="nav-link-icon">
-                                    <i className="bi bi-bar-chart"></i>
-                                </span>
-                                <span>Dashboard</span>
-                            </Link>
-                        </li>
-                        <li className="menu-divider">Gestion</li>
-                        <li>
-                            <a href="#">
-                                <span className="nav-link-icon">
-                                    <i className="bi bi-receipt"></i>
-                                </span>
-                                <span>Itinéraires</span>
-                            </a>
-                            <ul>
-                                <li>
-                                    <Link href={route('itineraires')}>Tous les itinéraires</Link>
-                                </li>
+    const { url } = usePage();
+    const [activeLink, setActiveLink] = useState(url);
+    console.log(url)
+    const handleLinkClick = (link) => {
+      setActiveLink(link);
+    };
 
-                            </ul>
+    return (
+      <>
+        <div className="menu">
+          <div className="menu-body mt-5 pt-5">
+            <ul>
+              <li>
+                <Link
+                  className={activeLink === '/meta-dash-fleet' ? 'active' : ''}
+                  href={route('dashboard')}
+                  onClick={() => handleLinkClick(route('dashboard'))}
+                >
+                  <span className="nav-link-icon">
+                    <i className="bi bi-bar-chart"></i>
+                  </span>
+                  <span>Dashboard</span>
+                </Link>
+              </li>
+              <li className="menu-divider">Gestion</li>
+              <li>
+                <Link
+                  className={activeLink === '/roads' ? 'active' : ''}
+                  href={route('itineraires')}
+                  onClick={() => handleLinkClick(route('itineraires'))}
+                >
+                  <span className="nav-link-icon">
+                    <i className="bi bi-receipt"></i>
+                  </span>
+                  <span>Itinéraires</span>
+                </Link>
                         </li>
                         <li>
-                            <a href="#">
+                            <Link href="#">
                                 <span className="nav-link-icon">
                                     <i className="bi bi-truck"></i>
                                 </span>
                                 <span>Véhicules</span>
-                            </a>
-                            <ul>
-                                <li>
-                                    <a href="product-list.html">List
-                                        View</a>
-                                </li>
-                                <li>
-                                    <a href="product-grid.html">Grid
-                                        View</a>
-                                </li>
-                                <li>
-                                    <a href="product-detail.html">Product Detail</a>
-                                </li>
-                                <li>
-                                    <a href="shopping-cart.html">Shopping
-                                        Cart</a>
-                                </li>
-                                <li>
-                                    <a href="checkout.html">Checkout</a>
-                                </li>
-                            </ul>
+                            </Link>
                         </li>
                         <li>
                             <a href="#">

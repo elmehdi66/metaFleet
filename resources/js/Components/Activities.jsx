@@ -2,12 +2,13 @@ import Dashboard from '@/Pages/Dashboard'
 import React from 'react'
 
 function Activities() {
+
     return (
 
         <div className="col-lg-10 col-md-12">
             <div className="card widget">
                 <div className="card-header">
-                    <h1 className="">Activity Overview</h1>
+                    <h1 className=""></h1>
                 </div>
                 <div className="row g-4 mt-3">
                     <div className="col-md-6">

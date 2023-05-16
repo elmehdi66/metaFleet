@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.custom * {
+    margin-left: 10px ;
+}
+
+.add
+{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}

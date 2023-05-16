@@ -3,6 +3,7 @@
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -43,7 +44,17 @@ Route::middleware('auth')->group(function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
 
+    Route::get('/getUserType',function(){
+        $user_type = Auth()->user()->user_type ;
+        return $user_type;
+    });
     Route::get('/roads',[PagesController::class,'index'])->name('itineraires');
+    Route::get('/create_itineraire',[PagesController::class,'create'])->name('itineraires.create');
+    Route::post('elkrzfk',[PagesController::class,'store'])->name('itineraires.store');
+    Route::get('/edit/{id}',[PagesController::class,'edit'])->name('itineraires.edit');
+    Route::post('update',[PagesController::class,'update'])->name('itineraires.update');
+    Route::delete('/delete/{id}',[PagesController::class,'destroy'])->name('itineraires.destroy');
+
 });
 
 require __DIR__.'/auth.php';

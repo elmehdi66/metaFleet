@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('id_vehicule');
             $table->foreignId('id_conducteur');
             $table->foreignId('id_destination');
-            $table->dateTime('depart');
-            $table->dateTime('arrivee');
+            $table->dateTime('depart')->nullable();
+            $table->dateTime('arrivee')->nullable();
             $table->timestamps();
         });
     }
