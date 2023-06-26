@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\VehiculeController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,9 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
+    if (Auth::check()) {
+        return redirect()->route('dashboard');
+    }
     return Inertia::render('Auth/Login', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
@@ -54,7 +58,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit/{id}',[PagesController::class,'edit'])->name('itineraires.edit');
     Route::post('update',[PagesController::class,'update'])->name('itineraires.update');
     Route::delete('/delete/{id}',[PagesController::class,'destroy'])->name('itineraires.destroy');
-
+    Route::resource('vehicule', VehiculeController::class);
 });
 
 require __DIR__.'/auth.php';

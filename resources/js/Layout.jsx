@@ -5,9 +5,11 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head, usePage } from "@inertiajs/react";
 
 
+
 export default function Layout({ children }) {
     return (
         <>
+        
 
             <Head title="Dashboard" />
 

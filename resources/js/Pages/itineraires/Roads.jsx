@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 function Roads({ itineraires }) {
     const [selectedOption, setSelectedOption] = useState("vehicule");
     const [selectedId, setSelectedId] = useState(null);
-
+    console.log(itineraires);
     const navigateToEdit = (id) => {
         Inertia.visit(route("itineraires.edit", { id: id }));
     };
@@ -129,10 +129,11 @@ function Roads({ itineraires }) {
                     </tr>
                 </thead>
                 <tbody>
-                    {filteredItineraires.map((item) => {
+                    {filteredItineraires.map((item,index) => {
+                        const number = index + 1;
                         return (
-                            <tr key={item.id}>
-                                <td>{item.id}</td>
+                            <tr key={index}>
+                                <td>{number}</td>
                                 <td>{item.vehicule.marque} {item.vehicule.modele}</td>
                                 <td>{item.vehicule.matricule}</td>
                                 <td>{item.destination.nom_destination}</td>

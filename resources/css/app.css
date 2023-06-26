@@ -19,3 +19,14 @@
     justify-content: flex-end;
     padding: 20px;
 }
+.header{
+position: relative;
+align-items: center;
+justify-content: space-between;
+}
+
+.header .relative{
+    position: absolute !important;
+    right: 0 !important;
+}
+

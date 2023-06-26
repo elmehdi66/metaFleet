@@ -14,15 +14,13 @@ class PagesController extends Controller
 
     public function index()
     {
-
-
         $itineraires = Itineraire::with('vehicule', 'destination', 'conducteur')
-            ->latest()
-            ->paginate(6);
-
+        ->latest()
+        ->paginate(10);
         return Inertia::render('Itineraires/Roads', [
             'itineraires' => $itineraires,
         ]);
+
     }
 
     public function create()

@@ -1,47 +1,60 @@
 import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link , usePage} from '@inertiajs/react';
+import { Link, usePage } from '@inertiajs/react';
 
 function Sidebar() {
     const { url } = usePage();
     const [activeLink, setActiveLink] = useState(url);
     console.log(url)
     const handleLinkClick = (link) => {
-      setActiveLink(link);
+        setActiveLink(link);
     };
 
+
+    const itinerairePattern = /^\/roads\?page=/;
+
+    const vehiculePattern = /^\/vehicule\/\d+\/edit$/;
+    const isActiveLink = activeLink === '/vehicule' ||
+        activeLink === '/vehicule/create' ||
+        vehiculePattern.test(url);
+
+
     return (
-      <>
-        <div className="menu">
-          <div className="menu-body mt-5 pt-5">
-            <ul>
-              <li>
-                <Link
-                  className={activeLink === '/meta-dash-fleet' ? 'active' : ''}
-                  href={route('dashboard')}
-                  onClick={() => handleLinkClick(route('dashboard'))}
-                >
-                  <span className="nav-link-icon">
-                    <i className="bi bi-bar-chart"></i>
-                  </span>
-                  <span>Dashboard</span>
-                </Link>
-              </li>
-              <li className="menu-divider">Gestion</li>
-              <li>
-                <Link
-                  className={activeLink === '/roads' ? 'active' : ''}
-                  href={route('itineraires')}
-                  onClick={() => handleLinkClick(route('itineraires'))}
-                >
-                  <span className="nav-link-icon">
-                    <i className="bi bi-receipt"></i>
-                  </span>
-                  <span>Itinéraires</span>
-                </Link>
+        <>
+            <div className="menu">
+                <div className="menu-body mt-5 pt-5">
+                    <ul>
+                        <li>
+                            <Link
+                                className={activeLink === '/meta-dash-fleet' ? 'active' : ''}
+                                href={route('dashboard')}
+                                onClick={() => handleLinkClick(route('dashboard'))}
+                            >
+                                <span className="nav-link-icon">
+                                    <i className="bi bi-bar-chart"></i>
+                                </span>
+                                <span>Dashboard</span>
+                            </Link>
+                        </li>
+                        <li className="menu-divider">Gestion</li>
+                        <li>
+                            <Link
+                                className={(activeLink === '/roads' || activeLink === '/create_itineraire' || (itinerairePattern.test(url))) ? 'active' : ''}
+                                href={route('itineraires')}
+                                onClick={() => handleLinkClick(route('itineraires'))}
+                            >
+                                <span className="nav-link-icon">
+                                    <i className="bi bi-receipt"></i>
+                                </span>
+                                <span>Itinéraires</span>
+                            </Link>
                         </li>
                         <li>
-                            <Link href="#">
+                            <Link
+                                className={isActiveLink ? 'active' : ''}
+                                href={route('vehicule.index')}
+                                onClick={() => handleLinkClick(route('vehicule.index'))}
+                            >
                                 <span className="nav-link-icon">
                                     <i className="bi bi-truck"></i>
                                 </span>

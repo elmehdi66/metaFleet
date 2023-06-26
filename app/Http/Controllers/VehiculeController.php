@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Vehicule;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class VehiculeController extends Controller
 {
@@ -12,7 +13,10 @@ class VehiculeController extends Controller
      */
     public function index()
     {
-        //
+        $vehicules = Vehicule::latest()->paginate(5);
+        return Inertia::render('Vehicules/Index',[
+            'vehicules' => $vehicules
+        ]);
     }
 
     /**
@@ -20,7 +24,10 @@ class VehiculeController extends Controller
      */
     public function create()
     {
-        //
+        $vehicules = Vehicule::all();
+        return Inertia::render('Vehicules/Create',[
+            'vehicules' => $vehicules
+        ]);
     }
 
     /**
@@ -28,38 +35,75 @@ class VehiculeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'marque' => 'required',
+            'modele' => 'required',
+            'matricule' => 'required',
+            'annee' => 'required',
+            'carburant' => 'required',
+            'date_service' => 'required',
+            'statut' => 'required',
+        ]);
+
+        $vehicule = new Vehicule();
+        $vehicule->marque = $request->marque;
+        $vehicule->modele = $request->modele;
+        $vehicule->matricule = $request->matricule;
+        $vehicule->annee = $request->annee;
+        $vehicule->carburant = $request->carburant;
+        $vehicule->date_service = $request->date_service;
+        $vehicule->statut = $request->statut;
+
+        $vehicule->save();
+
+        return redirect()->route('vehicule.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Vehicule $vehicule)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Vehicule $vehicule)
+
+    public function edit(int $id)
     {
-        //
+        return Inertia::render('Vehicules/Edit',[
+            'vehicule' => Vehicule::find($id),
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Vehicule $vehicule)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'marque' => 'required',
+            'modele' => 'required',
+            'matricule' => 'required',
+            'annee' => 'required',
+            'carburant' => 'required',
+            'date_service' => 'required',
+            'statut' => 'required',
+        ]);
+
+        $newVehicule = Vehicule::find($id);
+        $newVehicule->marque = $request->marque;
+        $newVehicule->modele = $request->modele;
+        $newVehicule->matricule = $request->matricule;
+        $newVehicule->annee = $request->annee;
+        $newVehicule->carburant = $request->carburant;
+        $newVehicule->date_service = $request->date_service;
+        $newVehicule->statut = $request->statut;
+
+        $newVehicule->save();
+
+        return redirect()->route('vehicule.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Vehicule $vehicule)
+    public function destroy(int $id)
     {
-        //
+        $vehicule = Vehicule::find($id);
+        $vehicule->delete();
+        return redirect()->back();
     }
 }
